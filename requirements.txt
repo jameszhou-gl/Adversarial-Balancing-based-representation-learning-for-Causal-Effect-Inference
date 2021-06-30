@@ -1,0 +1,17 @@
+bleach==1.5.0
+certifi==2020.6.20
+enum34==1.1.10
+html5lib==0.9999999
+importlib-metadata==2.1.1
+joblib==0.14.1
+Markdown==3.2.2
+numpy==1.15.1
+protobuf==3.17.3
+scikit-learn==0.22.2.post1
+scipy==1.4.1
+six==1.16.0
+sklearn==0.0
+tensorflow==1.4.0
+tensorflow-tensorboard==0.4.0
+Werkzeug==1.0.1
+zipp==1.2.0
