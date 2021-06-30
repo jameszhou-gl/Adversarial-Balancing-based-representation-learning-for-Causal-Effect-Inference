@@ -86,11 +86,7 @@ def run(cfg_file, num_runs):
         print('\n'.join(['{}: {}'.format(str(k), str(v)) for k, v in cfg.items() if len(configs[k]) > 1]))
 
         flags = ' '.join('--{} {}'.format(k, str(v)) for k, v in cfg.items())
-
-        print(flags)
-        exit()
-
-        # call('python rbci_train.py %s' % flags, shell=True)
+        call('python rbci_train.py %s' % flags, shell=True)
 
 
 if __name__ == "__main__":
