@@ -14,19 +14,20 @@ class RBNet(object):
 
     def __init__(self, x, t, y_, p_t, z_norm, flags, r_lambda, r_beta, do_in, do_out, dims):
         """
-        x           The output prediction "y"
-        t           The total objective to minimize
-        y_          The prediction term of the objective
-        p_t         The input/representation layer weights
-        z_norm      The output/post-representation layer weights
-        flags       The (linear) prediction layer weights
-        r_lambda    The layer of the penalized representation
-        r_beta      The
-        do_in       The
-        do_out      The
-        dims        The
+        x           The varibales of data
+        t           The treatment applied to x, t.shape[1]==1
+        y_          The true outcome
+        p_t         The treatment probability in all observations
+        z_norm      todo unknown
+        flags       The arg params
+        r_lambda    The coefficient of regularization of prediction network
+        r_beta      The coefficient of gradient penalty in GAN
+        do_in       The val of dropout_in
+        do_out      The val of dropout_out
+        dims        [data['dim'], flags.dim_in, flags.dim_out, flags.dim_mi, flags.dim_d]:[x.shape[1], todo physical meaning of 200, 100, 200, 200]
         """
         self.variables = {}
+        # wd_loss: regularization l2 loss
         self.wd_loss = 0
 
         if flags.nonlin.lower() == 'elu':
@@ -95,7 +96,7 @@ class RBNet(object):
         dim_mi = dims[3]
         dim_d = dims[4]
 
-        """ Construct input/representation layers """
+        # Construct Encoder network layers, four layers with size 200
         with tf.variable_scope('encoder') as scope:
             weights_in = []
             biases_in = []
@@ -127,6 +128,7 @@ class RBNet(object):
                                                                    stddev=flags.weight_init / np.sqrt(dim_in))))
 
                 biases_in.append(tf.Variable(tf.zeros([1, dim_in])))
+                # z equals outcome of each layer in Encoder Network.
                 z = tf.matmul(h_in[i], weights_in[i]) + biases_in[i]
 
                 if flags.batch_norm:
@@ -142,24 +144,29 @@ class RBNet(object):
                 h_in.append(self.nonlin(z))
                 h_in[i + 1] = tf.nn.dropout(h_in[i + 1], do_in)
 
-            h_rep = h_in[len(h_in) - 1]
+            h_rep = h_in[-1]
 
+            # todo normalization meaning?
             if flags.normalization == 'divide':
                 h_rep_norm = h_rep / safe_sqrt(tf.reduce_sum(tf.square(h_rep), axis=1, keep_dims=True))
             else:
                 h_rep_norm = 1.0 * h_rep
 
-        # estimate Global MI
-        T_xy, T_x_y, weights_mi_x, weights_mi_y, weights_mi_pred = self._build_discriminator_graph_mine(x, h_rep_norm,
-                                                                                                        dim_input,
-                                                                                                        dim_in, dim_mi,
-                                                                                                        flags)
+        # mutual information estimator
+        real_estimate, fake_estimate, weights_mi_x, weights_mi_y, weights_mi_pred = self._build_discriminator_graph_mine(
+            x, h_rep_norm,
+            dim_input,
+            dim_in, dim_mi,
+            flags)
 
         # Global MI loss/representation error
         # compute the negative loss (maximise loss == minimise -loss)
-        # neg_loss = -(tf.reduce_mean(T_xy, axis=0) - tf.log(tf.reduce_mean(tf.exp(T_x_y))))   #DV-based measure
-        gmi_neg_loss = -(tf.reduce_mean(tf.log(2.) - tf.nn.softplus(-T_xy)) -
-                         tf.reduce_mean(tf.nn.softplus(-T_x_y) + T_x_y - tf.log(2.)))  # JSD-based measure
+        # DV-based measure used in paper
+        # neg_loss = -(tf.reduce_mean(real_estimate, axis=0) - tf.log(tf.reduce_mean(tf.exp(fake_estimate))))
+        # JSD-based measure
+        gmi_neg_loss = -(tf.reduce_mean(tf.log(2.) - tf.nn.softplus(-real_estimate)) -
+                         tf.reduce_mean(
+                             tf.nn.softplus(-fake_estimate) + fake_estimate - tf.log(2.)))
 
         # adversarial balancing
         d0, d1, dp, weights_dis, weights_discore = self._build_adversarial_graph(h_rep_norm, t, dim_in, dim_d, do_out,
@@ -174,11 +181,11 @@ class RBNet(object):
         discriminator_loss = -tf.reduce_mean(d0) + tf.reduce_mean(d1) + r_beta * dp
 
         # encoder
-
         # with sigmoid
         # rep_loss = tf.reduce_mean(tf.nn.softplus(-d1))
 
         # without sigmoid
+        # todo rep_loss in paper: rep_loss = tf.reduce_mean(d0) - tf.reduce_mean(d1)
         rep_loss = -tf.reduce_mean(d1)
 
         """ Construct ouput layers """
@@ -225,6 +232,7 @@ class RBNet(object):
             self.projection = weights_in[0].assign(self.w_proj)
 
         self.output = y
+        # todo tot_loss only contains risk and regularization loss?
         self.tot_loss = tot_error
         self.gmi_neg_loss = gmi_neg_loss
         self.discriminator_loss = discriminator_loss
@@ -304,23 +312,27 @@ class RBNet(object):
 
     def _build_discriminator_graph_mine(self, x, hrep, dim_input, dim_in, dim_mi, flags):
         """ Construct MI estimation layers """
+        # two layers with size 200
         with tf.variable_scope('gmi') as scope:
-            input_size = tf.shape(x)[0]
+            input_num = tf.shape(x)[0]
             x_shuffle = tf.random_shuffle(x)
             x_conc = tf.concat([x, x_shuffle], axis=0)
             y_conc = tf.concat([hrep, hrep], axis=0)
 
             # forward
+            # [25, 200]
             weights_mi_x = self._create_variable(tf.random_normal([dim_input, dim_mi],
                                                                   stddev=flags.weight_init / np.sqrt(dim_input)),
                                                  'weights_mi_x')
             biases_mi_x = self._create_variable(tf.zeros([1, dim_mi]), 'biases_mi_x')
+            # [, 200]
             lin_x = tf.matmul(x_conc, weights_mi_x) + biases_mi_x
-
+            # [200, 200]
             weights_mi_y = self._create_variable(tf.random_normal([dim_in, dim_mi],
                                                                   stddev=flags.weight_init / np.sqrt(dim_in)),
                                                  'weights_mi_y')
             biases_mi_y = self._create_variable(tf.zeros([1, dim_mi]), 'biases_mi_y')
+            # [, 200]
             lin_y = tf.matmul(y_conc, weights_mi_y) + biases_mi_y
 
             # lin_conc = tf.nn.relu(lin_x + lin_y)
@@ -331,11 +343,12 @@ class RBNet(object):
                                                     'gmi_p')
             biases_mi_pred = self._create_variable(tf.zeros([1, dim_mi]), 'biases_mi_pred')
             gmi_output = tf.matmul(lin_conc, weights_mi_pred) + biases_mi_pred
+            # real estimator outcome: shape=[input_num, 1]
+            real_estimate = gmi_output[:input_num]
+            # fake estimator outcome: shape=[input_num, 1]
+            fake_estimate = gmi_output[input_num:]
 
-            T_xy = gmi_output[:input_size]
-            T_x_y = gmi_output[input_size:]
-
-        return T_xy, T_x_y, weights_mi_x, weights_mi_y, weights_mi_pred
+        return real_estimate, fake_estimate, weights_mi_x, weights_mi_y, weights_mi_pred
 
     def _build_discriminator_adversarial(self, hrep, dim_in, dim_d, do_out, flags, reuse=False):
         """ Construct adversarial discriminator layers """
@@ -372,6 +385,7 @@ class RBNet(object):
         """
         Construct adversarial discriminator
         """
+        # three layers with size 200
 
         i0 = tf.to_int32(tf.where(t < 1)[:, 0])
         i1 = tf.to_int32(tf.where(t > 0)[:, 0])

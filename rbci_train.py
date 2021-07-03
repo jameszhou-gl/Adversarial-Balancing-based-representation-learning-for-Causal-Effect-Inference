@@ -25,7 +25,7 @@ tf.app.flags.DEFINE_string('nonlin', 'relu', """Kind of non-linearity. Default r
 tf.app.flags.DEFINE_float('lrate', 0.05, """Learning rate. """)
 tf.app.flags.DEFINE_float('decay', 0.5, """RMSProp decay. """)
 tf.app.flags.DEFINE_integer('batch_size', 100, """Batch size. """)
-tf.app.flags.DEFINE_integer('dim_in', 100, """Pre-representation layer dimensions. """)
+tf.app.flags.DEFINE_integer('dim_in', 100, """Layer dimensions of Encoder network. """)
 tf.app.flags.DEFINE_integer('dim_out', 100, """Post-representation layer dimensions. """)
 tf.app.flags.DEFINE_integer('dim_mi', 100, """MI estimation layer dimensions. """)
 tf.app.flags.DEFINE_integer('dim_d', 100, """Discriminator layer dimensions. """)
@@ -74,9 +74,9 @@ def train(rbnet, sess, train_step, train_discriminator_step, train_encoder_step,
     """ Trains a rbnet model on supplied data """
 
     ''' Train/validation split '''
-    n = data_exp['x'].shape[0]
-    I = range(n)
-    train_index = list(set(I) - set(valid_data_exp_id_arr))
+    data_num = data_exp['x'].shape[0]
+    range_of_data_num = range(data_num)
+    train_index = list(set(range_of_data_num) - set(valid_data_exp_id_arr))
     train_num = len(train_index)
 
     ''' Compute treatment probability'''
@@ -85,6 +85,7 @@ def train(rbnet, sess, train_step, train_discriminator_step, train_encoder_step,
     z_norm = np.random.normal(0., 1., (1, flags.dim_in))
 
     ''' Set up loss feed_dicts'''
+    # todo dict_factual means in train_data
     dict_factual = {rbnet.x: data_exp['x'][train_index, :], rbnet.t: data_exp['t'][train_index, :],
                     rbnet.y_: data_exp['yf'][train_index, :],
                     rbnet.do_in: 1.0, rbnet.do_out: 1.0, rbnet.r_lambda: flags.p_lambda, rbnet.r_beta: flags.p_beta,
@@ -335,13 +336,18 @@ def run(outdir):
     t = tf.placeholder("float", shape=[None, 1], name='t')  # Treatent
     y_ = tf.placeholder("float", shape=[None, 1], name='y_')  # Outcome
 
+    # todo maybe
     znorm = tf.placeholder("float", shape=[None, flags.dim_in], name='z_norm')
 
     ''' Parameter placeholders '''
+    # r_lambda is coefficient of regularization of prediction network.
     r_lambda = tf.placeholder("float", name='r_lambda')
+    # r_beta is coefficient of gradient penalty in GAN
     r_beta = tf.placeholder("float", name='r_beta')
+
     do_in = tf.placeholder("float", name='dropout_in')
     do_out = tf.placeholder("float", name='dropout_out')
+    # treatment probability in all observations
     p = tf.placeholder("float", name='p_treated')
 
     ''' Define model graph '''
@@ -415,10 +421,11 @@ def run(outdir):
     print()
     print("var_pred:", [v.name for v in var_pred])
     print()
-
+    # todo why global_step is counter_gmi?
     train_hrep_step = opt_gmi.minimize(rbnet.gmi_neg_loss, global_step=counter_gmi, var_list=var_gmi)
     train_discriminator_step = opt_dc.minimize(rbnet.discriminator_loss, global_step=counter_dc, var_list=var_dc)
     train_encoder_step = opt_enc.minimize(rbnet.rep_loss, global_step=counter_enc, var_list=var_enc)
+    # todo why train_step using var_pred(pred and enc)?
     train_step = opt.minimize(rbnet.tot_loss, global_step=global_step, var_list=var_pred)
 
     ''' Set up for saving variables '''
