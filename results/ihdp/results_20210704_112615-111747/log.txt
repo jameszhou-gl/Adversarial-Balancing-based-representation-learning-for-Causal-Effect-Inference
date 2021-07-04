@@ -1,98 +1,96 @@
 Training with hyperparameters: beta=10, lambda=0.0001
-Train data:data/ihdp_npci_1-100.train.npz
-Test data:data/ihdp_npci_1-100.test.npz
+Training data: data/ihdp_npci_1-100.train.npz
+Test data:     data/ihdp_npci_1-100.test.npz
 Loaded data with shape [672,25]
 Defining graph...
 
 Training on experiment 1/10...
 0	Obj: 24.822,	F: 3.894,	Cf: 5.957, 	GMI: -0.000, 	dc_loss: 9.920, 	rep_loss: 0.003, 	dp: 0.993, 	Val: 3.583, 	ValGMI: -0.000, 	Valdc: 9.920, 	Valrep: 0.003, 	Valdp: 0.993, 	ValObj: 21.69
-100	Obj: 0.874,	F: 1.009,	Cf: 1.086, 	GMI: 1.050, 	dc_loss: -2751.509, 	rep_loss: 1292.113, 	dp: 0.000, 	Val: 1.127, 	ValGMI: 1.056, 	Valdc: -2589.650, 	Valrep: 1159.461, 	Valdp: 0.000, 	ValObj: 1.32
 200	Obj: 0.629,	F: 0.895,	Cf: 1.187, 	GMI: 1.130, 	dc_loss: -12648.698, 	rep_loss: 5567.867, 	dp: 0.000, 	Val: 1.082, 	ValGMI: 1.151, 	Valdc: -11929.277, 	Valrep: 5077.711, 	Valdp: 0.000, 	ValObj: 1.32
-300	Obj: 0.452,	F: 0.813,	Cf: 1.437, 	GMI: 1.185, 	dc_loss: -23772.049, 	rep_loss: 10231.704, 	dp: 0.000, 	Val: 1.140, 	ValGMI: 1.136, 	Valdc: -22459.877, 	Valrep: 9363.077, 	Valdp: 0.000, 	ValObj: 1.57
 400	Obj: 0.368,	F: 0.750,	Cf: 1.583, 	GMI: 1.189, 	dc_loss: -31536.480, 	rep_loss: 13026.258, 	dp: 0.000, 	Val: 1.178, 	ValGMI: 1.124, 	Valdc: -29855.051, 	Valrep: 12196.039, 	Valdp: 0.000, 	ValObj: 1.66
-500	Obj: 0.258,	F: 0.646,	Cf: 1.698, 	GMI: 1.214, 	dc_loss: -34740.590, 	rep_loss: 14380.145, 	dp: 0.000, 	Val: 1.235, 	ValGMI: 1.196, 	Valdc: -32756.402, 	Valrep: 13429.528, 	Valdp: 0.000, 	ValObj: 1.80
 600	Obj: 0.184,	F: 0.549,	Cf: 1.727, 	GMI: 1.245, 	dc_loss: -38639.469, 	rep_loss: 15817.583, 	dp: 0.000, 	Val: 1.332, 	ValGMI: 1.264, 	Valdc: -36288.945, 	Valrep: 14686.652, 	Valdp: 0.000, 	ValObj: 1.92
-700	Obj: 0.126,	F: 0.451,	Cf: 1.839, 	GMI: 1.253, 	dc_loss: -40029.801, 	rep_loss: 16417.775, 	dp: 0.000, 	Val: 1.430, 	ValGMI: 1.223, 	Valdc: -37782.348, 	Valrep: 15247.480, 	Valdp: 0.000, 	ValObj: 2.09
 800	Obj: 0.075,	F: 0.341,	Cf: 1.841, 	GMI: 1.261, 	dc_loss: -40643.438, 	rep_loss: 16620.676, 	dp: 0.000, 	Val: 1.472, 	ValGMI: 1.258, 	Valdc: -38547.664, 	Valrep: 15600.326, 	Valdp: 0.000, 	ValObj: 2.15
-900	Obj: 0.051,	F: 0.276,	Cf: 1.870, 	GMI: 1.246, 	dc_loss: -40721.863, 	rep_loss: 16427.326, 	dp: 0.000, 	Val: 1.564, 	ValGMI: 1.174, 	Valdc: -38827.707, 	Valrep: 15668.300, 	Valdp: 0.000, 	ValObj: 2.36
 999	Obj: 0.047,	F: 0.254,	Cf: 1.909, 	GMI: 1.253, 	dc_loss: -40193.367, 	rep_loss: 16204.377, 	dp: 0.000, 	Val: 1.623, 	ValGMI: 1.190, 	Valdc: -38465.289, 	Valrep: 15482.937, 	Valdp: 0.000, 	ValObj: 2.50
-Saving result to results/ihdp/results_20210703_145216-139796...
+Saving result to results/ihdp//results_20210704_112615-111747/...
 
 Training on experiment 2/10...
 0	Obj: 43.701,	F: 5.432,	Cf: 7.686, 	GMI: -0.000, 	dc_loss: 9.919, 	rep_loss: 0.002, 	dp: 0.992, 	Val: 5.492, 	ValGMI: -0.000, 	Valdc: 9.919, 	Valrep: 0.002, 	Valdp: 0.992, 	ValObj: 45.28
-100	Obj: 0.974,	F: 1.088,	Cf: 1.163, 	GMI: 1.049, 	dc_loss: -2966.511, 	rep_loss: 1428.869, 	dp: 0.000, 	Val: 1.162, 	ValGMI: 0.994, 	Valdc: -2780.628, 	Valrep: 1268.597, 	Valdp: 0.000, 	ValObj: 1.33
 200	Obj: 0.671,	F: 0.933,	Cf: 1.241, 	GMI: 1.135, 	dc_loss: -12833.280, 	rep_loss: 5892.071, 	dp: 0.000, 	Val: 1.113, 	ValGMI: 1.213, 	Valdc: -11488.590, 	Valrep: 4767.172, 	Valdp: 0.000, 	ValObj: 1.20
-300	Obj: 0.478,	F: 0.845,	Cf: 1.544, 	GMI: 1.167, 	dc_loss: -24808.371, 	rep_loss: 11369.866, 	dp: 0.000, 	Val: 1.239, 	ValGMI: 1.114, 	Valdc: -22469.918, 	Valrep: 9419.853, 	Valdp: 0.000, 	ValObj: 1.85
 400	Obj: 0.410,	F: 0.793,	Cf: 1.541, 	GMI: 1.182, 	dc_loss: -32432.211, 	rep_loss: 14597.919, 	dp: 0.000, 	Val: 1.257, 	ValGMI: 1.212, 	Valdc: -28618.814, 	Valrep: 11483.195, 	Valdp: 0.000, 	ValObj: 1.65
-500	Obj: 0.294,	F: 0.687,	Cf: 1.560, 	GMI: 1.198, 	dc_loss: -38009.844, 	rep_loss: 17143.482, 	dp: 0.000, 	Val: 1.307, 	ValGMI: 1.180, 	Valdc: -33667.703, 	Valrep: 13552.043, 	Valdp: 0.000, 	ValObj: 1.73
 600	Obj: 0.197,	F: 0.573,	Cf: 1.552, 	GMI: 1.222, 	dc_loss: -40975.984, 	rep_loss: 18211.922, 	dp: 0.000, 	Val: 1.397, 	ValGMI: 1.178, 	Valdc: -36432.598, 	Valrep: 14895.978, 	Valdp: 0.000, 	ValObj: 1.94
-700	Obj: 0.162,	F: 0.505,	Cf: 1.572, 	GMI: 1.257, 	dc_loss: -42413.234, 	rep_loss: 18805.984, 	dp: 0.000, 	Val: 1.487, 	ValGMI: 1.185, 	Valdc: -37681.234, 	Valrep: 15237.635, 	Valdp: 0.000, 	ValObj: 2.19
 800	Obj: 0.091,	F: 0.370,	Cf: 1.553, 	GMI: 1.240, 	dc_loss: -42920.254, 	rep_loss: 18959.912, 	dp: 0.000, 	Val: 1.526, 	ValGMI: 1.134, 	Valdc: -38776.945, 	Valrep: 15677.331, 	Valdp: 0.000, 	ValObj: 2.27
-900	Obj: 0.064,	F: 0.312,	Cf: 1.555, 	GMI: 1.247, 	dc_loss: -43116.789, 	rep_loss: 18909.471, 	dp: 0.000, 	Val: 1.542, 	ValGMI: 1.217, 	Valdc: -38305.402, 	Valrep: 15385.190, 	Valdp: 0.000, 	ValObj: 2.22
 999	Obj: 0.046,	F: 0.256,	Cf: 1.552, 	GMI: 1.229, 	dc_loss: -42175.125, 	rep_loss: 18341.408, 	dp: 0.000, 	Val: 1.557, 	ValGMI: 1.224, 	Valdc: -37391.477, 	Valrep: 14886.485, 	Valdp: 0.000, 	ValObj: 2.24
-Saving result to results/ihdp/results_20210703_145216-139796...
+Saving result to results/ihdp//results_20210704_112615-111747/...
 
 Training on experiment 3/10...
 0	Obj: 33.944,	F: 4.553,	Cf: 6.932, 	GMI: -0.000, 	dc_loss: 9.922, 	rep_loss: 0.004, 	dp: 0.993, 	Val: 4.580, 	ValGMI: -0.000, 	Valdc: 9.922, 	Valrep: 0.004, 	Valdp: 0.993, 	ValObj: 31.43
-100	Obj: 0.900,	F: 1.026,	Cf: 1.087, 	GMI: 0.822, 	dc_loss: -2250.000, 	rep_loss: 845.939, 	dp: 0.000, 	Val: 1.117, 	ValGMI: 0.777, 	Valdc: -2138.723, 	Valrep: 830.331, 	Valdp: 0.000, 	ValObj: 1.17
 200	Obj: 0.864,	F: 1.004,	Cf: 1.141, 	GMI: 0.915, 	dc_loss: -9316.630, 	rep_loss: 3246.201, 	dp: 0.000, 	Val: 1.155, 	ValGMI: 0.853, 	Valdc: -8879.590, 	Valrep: 2935.320, 	Valdp: 0.000, 	ValObj: 1.17
-300	Obj: 0.771,	F: 0.950,	Cf: 1.146, 	GMI: 0.900, 	dc_loss: -17841.160, 	rep_loss: 6092.765, 	dp: 0.000, 	Val: 1.170, 	ValGMI: 0.898, 	Valdc: -16548.922, 	Valrep: 5580.619, 	Valdp: 0.000, 	ValObj: 1.34
 400	Obj: 0.584,	F: 0.889,	Cf: 1.360, 	GMI: 0.938, 	dc_loss: -24676.992, 	rep_loss: 8419.003, 	dp: 0.000, 	Val: 1.215, 	ValGMI: 0.961, 	Valdc: -23089.871, 	Valrep: 7929.898, 	Valdp: 0.000, 	ValObj: 1.70
-500	Obj: 0.439,	F: 0.825,	Cf: 1.539, 	GMI: 0.994, 	dc_loss: -29189.293, 	rep_loss: 9626.989, 	dp: 0.000, 	Val: 1.234, 	ValGMI: 0.946, 	Valdc: -27199.738, 	Valrep: 9015.863, 	Valdp: 0.000, 	ValObj: 1.63
 600	Obj: 0.344,	F: 0.757,	Cf: 1.670, 	GMI: 0.989, 	dc_loss: -31156.551, 	rep_loss: 9978.159, 	dp: 0.000, 	Val: 1.301, 	ValGMI: 0.995, 	Valdc: -29609.051, 	Valrep: 9606.286, 	Valdp: 0.000, 	ValObj: 1.91
-700	Obj: 0.289,	F: 0.704,	Cf: 1.695, 	GMI: 1.052, 	dc_loss: -32445.801, 	rep_loss: 10090.266, 	dp: 0.000, 	Val: 1.283, 	ValGMI: 0.965, 	Valdc: -31005.246, 	Valrep: 10037.772, 	Valdp: 0.000, 	ValObj: 1.75
 800	Obj: 0.263,	F: 0.663,	Cf: 1.739, 	GMI: 1.012, 	dc_loss: -33198.551, 	rep_loss: 10218.457, 	dp: 0.000, 	Val: 1.360, 	ValGMI: 1.013, 	Valdc: -31987.256, 	Valrep: 10286.809, 	Valdp: 0.000, 	ValObj: 1.84
-900	Obj: 0.184,	F: 0.561,	Cf: 1.785, 	GMI: 1.054, 	dc_loss: -33230.465, 	rep_loss: 10163.933, 	dp: 0.000, 	Val: 1.396, 	ValGMI: 1.012, 	Valdc: -31614.000, 	Valrep: 10244.158, 	Valdp: 0.000, 	ValObj: 2.00
 999	Obj: 0.144,	F: 0.491,	Cf: 1.822, 	GMI: 1.022, 	dc_loss: -32916.086, 	rep_loss: 9971.553, 	dp: 0.000, 	Val: 1.473, 	ValGMI: 1.008, 	Valdc: -31132.746, 	Valrep: 9901.403, 	Valdp: 0.000, 	ValObj: 2.15
-Saving result to results/ihdp/results_20210703_145216-139796...
+Saving result to results/ihdp//results_20210704_112615-111747/...
 
 Training on experiment 4/10...
 0	Obj: 105.943,	F: 9.176,	Cf: 11.704, 	GMI: -0.000, 	dc_loss: 9.919, 	rep_loss: 0.003, 	dp: 0.993, 	Val: 9.087, 	ValGMI: -0.000, 	Valdc: 9.919, 	Valrep: 0.003, 	Valdp: 0.993, 	ValObj: 112.16
-100	Obj: 1.231,	F: 1.229,	Cf: 1.112, 	GMI: 0.765, 	dc_loss: -1934.177, 	rep_loss: 822.139, 	dp: 0.000, 	Val: 1.232, 	ValGMI: 0.775, 	Valdc: -1918.197, 	Valrep: 850.975, 	Valdp: 0.000, 	ValObj: 1.28
 200	Obj: 0.964,	F: 1.023,	Cf: 1.099, 	GMI: 0.892, 	dc_loss: -9436.574, 	rep_loss: 3722.290, 	dp: 0.000, 	Val: 1.103, 	ValGMI: 0.893, 	Valdc: -9196.269, 	Valrep: 3758.449, 	Valdp: 0.000, 	ValObj: 1.14
-300	Obj: 0.890,	F: 0.987,	Cf: 1.111, 	GMI: 0.896, 	dc_loss: -16859.232, 	rep_loss: 6396.242, 	dp: 0.000, 	Val: 1.071, 	ValGMI: 0.840, 	Valdc: -16473.229, 	Valrep: 6600.656, 	Valdp: 0.000, 	ValObj: 1.09
 400	Obj: 0.803,	F: 1.035,	Cf: 1.294, 	GMI: 0.943, 	dc_loss: -22314.355, 	rep_loss: 8255.242, 	dp: 0.000, 	Val: 1.260, 	ValGMI: 0.905, 	Valdc: -22103.797, 	Valrep: 8564.633, 	Valdp: 0.000, 	ValObj: 1.55
-500	Obj: 0.525,	F: 0.850,	Cf: 1.475, 	GMI: 1.061, 	dc_loss: -24840.561, 	rep_loss: 8969.696, 	dp: 0.000, 	Val: 1.143, 	ValGMI: 0.977, 	Valdc: -24464.543, 	Valrep: 9470.545, 	Valdp: 0.000, 	ValObj: 1.51
 600	Obj: 0.481,	F: 0.833,	Cf: 1.708, 	GMI: 1.047, 	dc_loss: -26678.113, 	rep_loss: 9621.137, 	dp: 0.000, 	Val: 1.158, 	ValGMI: 0.937, 	Valdc: -26565.920, 	Valrep: 10369.279, 	Valdp: 0.000, 	ValObj: 1.60
-700	Obj: 0.450,	F: 0.831,	Cf: 1.746, 	GMI: 0.993, 	dc_loss: -28637.557, 	rep_loss: 10323.170, 	dp: 0.000, 	Val: 1.197, 	ValGMI: 0.992, 	Valdc: -28325.625, 	Valrep: 10946.110, 	Valdp: 0.000, 	ValObj: 1.71
 800	Obj: 0.400,	F: 0.787,	Cf: 1.958, 	GMI: 1.066, 	dc_loss: -31142.393, 	rep_loss: 11281.874, 	dp: 0.000, 	Val: 1.247, 	ValGMI: 1.015, 	Valdc: -30534.557, 	Valrep: 11704.304, 	Valdp: 0.000, 	ValObj: 1.96
-900	Obj: 0.359,	F: 0.736,	Cf: 1.986, 	GMI: 1.048, 	dc_loss: -31980.330, 	rep_loss: 11589.881, 	dp: 0.000, 	Val: 1.258, 	ValGMI: 1.000, 	Valdc: -31696.074, 	Valrep: 12255.805, 	Valdp: 0.000, 	ValObj: 1.91
 999	Obj: 0.299,	F: 0.703,	Cf: 2.048, 	GMI: 1.043, 	dc_loss: -33216.758, 	rep_loss: 12204.902, 	dp: 0.000, 	Val: 1.289, 	ValGMI: 0.991, 	Valdc: -32648.299, 	Valrep: 12475.729, 	Valdp: 0.000, 	ValObj: 1.99
-Saving result to results/ihdp/results_20210703_145216-139796...
+Saving result to results/ihdp//results_20210704_112615-111747/...
 
 Training on experiment 5/10...
 0	Obj: 89.326,	F: 8.419,	Cf: 10.698, 	GMI: -0.000, 	dc_loss: 9.920, 	rep_loss: 0.003, 	dp: 0.993, 	Val: 8.420, 	ValGMI: -0.000, 	Valdc: 9.920, 	Valrep: 0.003, 	Valdp: 0.993, 	ValObj: 83.39
-100	Obj: 1.244,	F: 1.250,	Cf: 1.204, 	GMI: 1.071, 	dc_loss: -2868.206, 	rep_loss: 1211.806, 	dp: 0.000, 	Val: 1.336, 	ValGMI: 1.033, 	Valdc: -2600.735, 	Valrep: 1042.285, 	Valdp: 0.000, 	ValObj: 1.50
 200	Obj: 0.818,	F: 0.936,	Cf: 1.141, 	GMI: 1.100, 	dc_loss: -12037.334, 	rep_loss: 4604.462, 	dp: 0.000, 	Val: 1.116, 	ValGMI: 1.068, 	Valdc: -10688.013, 	Valrep: 3904.945, 	Valdp: 0.000, 	ValObj: 1.12
-300	Obj: 0.702,	F: 0.900,	Cf: 1.187, 	GMI: 1.152, 	dc_loss: -23060.398, 	rep_loss: 8792.592, 	dp: 0.000, 	Val: 1.182, 	ValGMI: 1.087, 	Valdc: -20539.133, 	Valrep: 7525.313, 	Valdp: 0.000, 	ValObj: 1.26
 400	Obj: 0.610,	F: 0.874,	Cf: 1.304, 	GMI: 1.208, 	dc_loss: -31896.799, 	rep_loss: 11842.699, 	dp: 0.000, 	Val: 1.249, 	ValGMI: 1.138, 	Valdc: -28198.320, 	Valrep: 9944.292, 	Valdp: 0.000, 	ValObj: 1.47
-500	Obj: 0.462,	F: 0.751,	Cf: 1.462, 	GMI: 1.219, 	dc_loss: -35913.746, 	rep_loss: 13138.055, 	dp: 0.000, 	Val: 1.254, 	ValGMI: 1.130, 	Valdc: -32269.371, 	Valrep: 11189.454, 	Valdp: 0.000, 	ValObj: 1.77
 600	Obj: 0.300,	F: 0.668,	Cf: 1.511, 	GMI: 1.239, 	dc_loss: -38389.293, 	rep_loss: 13517.290, 	dp: 0.000, 	Val: 1.308, 	ValGMI: 1.122, 	Valdc: -34441.543, 	Valrep: 11725.560, 	Valdp: 0.000, 	ValObj: 2.10
-700	Obj: 0.259,	F: 0.639,	Cf: 1.650, 	GMI: 1.263, 	dc_loss: -40269.570, 	rep_loss: 14255.880, 	dp: 0.000, 	Val: 1.449, 	ValGMI: 1.132, 	Valdc: -36263.934, 	Valrep: 12271.445, 	Valdp: 0.000, 	ValObj: 2.76
 800	Obj: 0.195,	F: 0.566,	Cf: 1.678, 	GMI: 1.225, 	dc_loss: -40226.891, 	rep_loss: 14062.281, 	dp: 0.000, 	Val: 1.428, 	ValGMI: 1.133, 	Valdc: -35802.910, 	Valrep: 11899.249, 	Valdp: 0.000, 	ValObj: 2.61
-900	Obj: 0.169,	F: 0.521,	Cf: 1.744, 	GMI: 1.189, 	dc_loss: -39843.414, 	rep_loss: 13838.774, 	dp: 0.000, 	Val: 1.424, 	ValGMI: 1.127, 	Valdc: -35533.477, 	Valrep: 11607.624, 	Valdp: 0.000, 	ValObj: 2.49
 999	Obj: 0.145,	F: 0.481,	Cf: 1.752, 	GMI: 1.256, 	dc_loss: -39740.156, 	rep_loss: 13790.889, 	dp: 0.000, 	Val: 1.492, 	ValGMI: 1.174, 	Valdc: -36060.234, 	Valrep: 12034.087, 	Valdp: 0.000, 	ValObj: 2.59
-Saving result to results/ihdp/results_20210703_145216-139796...
+Saving result to results/ihdp//results_20210704_112615-111747/...
 
 Training on experiment 6/10...
 0	Obj: 23.845,	F: 3.729,	Cf: 5.945, 	GMI: -0.000, 	dc_loss: 9.916, 	rep_loss: 0.003, 	dp: 0.992, 	Val: 3.843, 	ValGMI: -0.000, 	Valdc: 9.916, 	Valrep: 0.003, 	Valdp: 0.992, 	ValObj: 26.73
-100	Obj: 0.872,	F: 0.939,	Cf: 1.149, 	GMI: 1.077, 	dc_loss: -3122.858, 	rep_loss: 1272.275, 	dp: 0.000, 	Val: 1.066, 	ValGMI: 1.027, 	Valdc: -3115.968, 	Valrep: 1293.853, 	Valdp: 0.000, 	ValObj: 0.99
 200	Obj: 0.482,	F: 0.807,	Cf: 1.495, 	GMI: 1.117, 	dc_loss: -14438.977, 	rep_loss: 5478.984, 	dp: 0.000, 	Val: 1.132, 	ValGMI: 1.144, 	Valdc: -14246.432, 	Valrep: 5560.481, 	Valdp: 0.000, 	ValObj: 1.43
-300	Obj: 0.307,	F: 0.693,	Cf: 1.680, 	GMI: 1.201, 	dc_loss: -26052.320, 	rep_loss: 9453.713, 	dp: 0.000, 	Val: 1.195, 	ValGMI: 1.076, 	Valdc: -25511.047, 	Valrep: 9613.945, 	Valdp: 0.000, 	ValObj: 1.70
 400	Obj: 0.222,	F: 0.609,	Cf: 1.743, 	GMI: 1.227, 	dc_loss: -35156.492, 	rep_loss: 12633.030, 	dp: 0.000, 	Val: 1.287, 	ValGMI: 1.146, 	Valdc: -34513.961, 	Valrep: 12687.949, 	Valdp: 0.000, 	ValObj: 2.08
-500	Obj: 0.155,	F: 0.506,	Cf: 1.744, 	GMI: 1.204, 	dc_loss: -40282.109, 	rep_loss: 14398.685, 	dp: 0.000, 	Val: 1.327, 	ValGMI: 1.142, 	Valdc: -39915.527, 	Valrep: 14537.216, 	Valdp: 0.000, 	ValObj: 2.21
 600	Obj: 0.115,	F: 0.430,	Cf: 1.801, 	GMI: 1.207, 	dc_loss: -42600.875, 	rep_loss: 14939.100, 	dp: 0.000, 	Val: 1.380, 	ValGMI: 1.135, 	Valdc: -41922.414, 	Valrep: 15012.686, 	Valdp: 0.000, 	ValObj: 2.31
-700	Obj: 0.077,	F: 0.331,	Cf: 1.827, 	GMI: 1.219, 	dc_loss: -44010.285, 	rep_loss: 15299.237, 	dp: 0.000, 	Val: 1.449, 	ValGMI: 1.092, 	Valdc: -43885.598, 	Valrep: 15626.562, 	Valdp: 0.000, 	ValObj: 2.48
 800	Obj: 0.049,	F: 0.267,	Cf: 1.799, 	GMI: 1.227, 	dc_loss: -44075.109, 	rep_loss: 15247.072, 	dp: 0.000, 	Val: 1.443, 	ValGMI: 1.184, 	Valdc: -44256.762, 	Valrep: 15712.392, 	Valdp: 0.000, 	ValObj: 2.39
-900	Obj: 0.050,	F: 0.269,	Cf: 1.828, 	GMI: 1.247, 	dc_loss: -43916.129, 	rep_loss: 14995.317, 	dp: 0.000, 	Val: 1.455, 	ValGMI: 1.139, 	Valdc: -44134.961, 	Valrep: 15750.369, 	Valdp: 0.000, 	ValObj: 2.39
 999	Obj: 0.020,	F: 0.153,	Cf: 1.816, 	GMI: 1.203, 	dc_loss: -44209.457, 	rep_loss: 15038.812, 	dp: 0.000, 	Val: 1.489, 	ValGMI: 1.146, 	Valdc: -44443.418, 	Valrep: 15673.170, 	Valdp: 0.000, 	ValObj: 2.43
-Saving result to results/ihdp/results_20210703_145216-139796...
+Saving result to results/ihdp//results_20210704_112615-111747/...
 
 Training on experiment 7/10...
 0	Obj: 15.461,	F: 2.816,	Cf: 5.025, 	GMI: -0.000, 	dc_loss: 9.923, 	rep_loss: 0.003, 	dp: 0.993, 	Val: 2.990, 	ValGMI: -0.000, 	Valdc: 9.923, 	Valrep: 0.003, 	Valdp: 0.993, 	ValObj: 18.00
-100	Obj: 0.784,	F: 0.983,	Cf: 1.268, 	GMI: 0.951, 	dc_loss: -2599.907, 	rep_loss: 896.638, 	dp: 0.000, 	Val: 0.992, 	ValGMI: 0.982, 	Valdc: -2378.090, 	Valrep: 839.385, 	Valdp: 0.000, 	ValObj: 1.11
 200	Obj: 0.554,	F: 0.882,	Cf: 1.468, 	GMI: 1.098, 	dc_loss: -12757.422, 	rep_loss: 4177.184, 	dp: 0.000, 	Val: 1.077, 	ValGMI: 1.055, 	Valdc: -11608.562, 	Valrep: 3831.785, 	Valdp: 0.000, 	ValObj: 1.30
-300	Obj: 0.393,	F: 0.793,	Cf: 1.692, 	GMI: 1.154, 	dc_loss: -23691.891, 	rep_loss: 7722.474, 	dp: 0.000, 	Val: 1.066, 	ValGMI: 1.098, 	Valdc: -21451.779, 	Valrep: 6872.269, 	Valdp: 0.000, 	ValObj: 1.26
 400	Obj: 0.276,	F: 0.680,	Cf: 1.785, 	GMI: 1.214, 	dc_loss: -32123.758, 	rep_loss: 10161.595, 	dp: 0.000, 	Val: 1.094, 	ValGMI: 1.245, 	Valdc: -29346.309, 	Valrep: 8986.025, 	Valdp: 0.000, 	ValObj: 1.31
-500	Obj: 0.195,	F: 0.568,	Cf: 1.734, 	GMI: 1.196, 	dc_loss: -37704.164, 	rep_loss: 11670.269, 	dp: 0.000, 	Val: 1.173, 	ValGMI: 1.176, 	Valdc: -35045.156, 	Valrep: 10495.685, 	Valdp: 0.000, 	ValObj: 1.51
 600	Obj: 0.131,	F: 0.469,	Cf: 1.789, 	GMI: 1.188, 	dc_loss: -39993.344, 	rep_loss: 12207.570, 	dp: 0.000, 	Val: 1.218, 	ValGMI: 1.156, 	Valdc: -36831.062, 	Valrep: 10800.289, 	Valdp: 0.000, 	ValObj: 1.57
+800	Obj: 0.042,	F: 0.248,	Cf: 1.774, 	GMI: 1.222, 	dc_loss: -41861.766, 	rep_loss: 12596.631, 	dp: 0.000, 	Val: 1.379, 	ValGMI: 1.213, 	Valdc: -38593.227, 	Valrep: 11422.230, 	Valdp: 0.000, 	ValObj: 1.77
+999	Obj: 0.021,	F: 0.156,	Cf: 1.787, 	GMI: 1.229, 	dc_loss: -42272.648, 	rep_loss: 12166.177, 	dp: 0.000, 	Val: 1.414, 	ValGMI: 1.203, 	Valdc: -39329.922, 	Valrep: 11114.279, 	Valdp: 0.000, 	ValObj: 1.85
+Saving result to results/ihdp//results_20210704_112615-111747/...
+
+Training on experiment 8/10...
+0	Obj: 43.971,	F: 5.747,	Cf: 7.840, 	GMI: -0.000, 	dc_loss: 9.924, 	rep_loss: 0.003, 	dp: 0.993, 	Val: 5.838, 	ValGMI: -0.000, 	Valdc: 9.924, 	Valrep: 0.003, 	Valdp: 0.993, 	ValObj: 50.42
+200	Obj: 0.802,	F: 1.010,	Cf: 1.477, 	GMI: 1.171, 	dc_loss: -11779.521, 	rep_loss: 4804.958, 	dp: 0.000, 	Val: 1.462, 	ValGMI: 1.101, 	Valdc: -11172.998, 	Valrep: 4597.520, 	Valdp: 0.000, 	ValObj: 2.19
+400	Obj: 0.364,	F: 0.775,	Cf: 1.804, 	GMI: 1.214, 	dc_loss: -30285.812, 	rep_loss: 11682.571, 	dp: 0.000, 	Val: 1.463, 	ValGMI: 1.247, 	Valdc: -28500.387, 	Valrep: 11443.298, 	Valdp: 0.000, 	ValObj: 2.68
+600	Obj: 0.210,	F: 0.598,	Cf: 1.836, 	GMI: 1.243, 	dc_loss: -38282.562, 	rep_loss: 14475.566, 	dp: 0.000, 	Val: 1.528, 	ValGMI: 1.228, 	Valdc: -35984.832, 	Valrep: 14010.767, 	Valdp: 0.000, 	ValObj: 2.91
+800	Obj: 0.133,	F: 0.445,	Cf: 1.905, 	GMI: 1.244, 	dc_loss: -41154.602, 	rep_loss: 15294.500, 	dp: 0.000, 	Val: 1.573, 	ValGMI: 1.268, 	Valdc: -38941.250, 	Valrep: 15075.948, 	Valdp: 0.000, 	ValObj: 2.86
+999	Obj: 0.051,	F: 0.272,	Cf: 1.942, 	GMI: 1.264, 	dc_loss: -41902.836, 	rep_loss: 15364.830, 	dp: 0.000, 	Val: 1.636, 	ValGMI: 1.248, 	Valdc: -40037.805, 	Valrep: 15341.303, 	Valdp: 0.000, 	ValObj: 3.05
+Saving result to results/ihdp//results_20210704_112615-111747/...
+
+Training on experiment 9/10...
+0	Obj: 2181.217,	F: 46.516,	Cf: 50.640, 	GMI: -0.000, 	dc_loss: 9.924, 	rep_loss: 0.003, 	dp: 0.993, 	Val: 48.670, 	ValGMI: -0.000, 	Valdc: 9.924, 	Valrep: 0.003, 	Valdp: 0.993, 	ValObj: 2206.74
+200	Obj: 7.298,	F: 3.489,	Cf: 2.895, 	GMI: 0.909, 	dc_loss: -9294.736, 	rep_loss: 3998.115, 	dp: 0.000, 	Val: 5.599, 	ValGMI: 0.870, 	Valdc: -8560.502, 	Valrep: 3203.066, 	Valdp: 0.000, 	ValObj: 18.25
+400	Obj: 2.363,	F: 1.892,	Cf: 1.849, 	GMI: 1.131, 	dc_loss: -24903.359, 	rep_loss: 10315.565, 	dp: 0.000, 	Val: 4.278, 	ValGMI: 1.059, 	Valdc: -23384.141, 	Valrep: 8568.562, 	Valdp: 0.000, 	ValObj: 10.84
+600	Obj: 1.127,	F: 1.221,	Cf: 1.614, 	GMI: 1.165, 	dc_loss: -30270.418, 	rep_loss: 12188.601, 	dp: 0.000, 	Val: 4.019, 	ValGMI: 1.034, 	Valdc: -28553.012, 	Valrep: 10160.819, 	Valdp: 0.000, 	ValObj: 9.61
+800	Obj: 0.905,	F: 1.084,	Cf: 1.510, 	GMI: 1.234, 	dc_loss: -31310.197, 	rep_loss: 12373.309, 	dp: 0.000, 	Val: 3.664, 	ValGMI: 1.133, 	Valdc: -29277.469, 	Valrep: 10132.008, 	Valdp: 0.000, 	ValObj: 7.98
+999	Obj: 0.577,	F: 0.815,	Cf: 1.530, 	GMI: 1.225, 	dc_loss: -31022.258, 	rep_loss: 12120.626, 	dp: 0.000, 	Val: 3.708, 	ValGMI: 1.123, 	Valdc: -29213.473, 	Valrep: 9906.598, 	Valdp: 0.000, 	ValObj: 8.15
+Saving result to results/ihdp//results_20210704_112615-111747/...
+
+Training on experiment 10/10...
+0	Obj: 519.822,	F: 22.318,	Cf: 24.457, 	GMI: -0.000, 	dc_loss: 9.921, 	rep_loss: 0.004, 	dp: 0.993, 	Val: 22.813, 	ValGMI: -0.000, 	Valdc: 9.921, 	Valrep: 0.004, 	Valdp: 0.993, 	ValObj: 478.21
+200	Obj: 1.429,	F: 1.408,	Cf: 1.467, 	GMI: 1.086, 	dc_loss: -12767.908, 	rep_loss: 4947.995, 	dp: 0.000, 	Val: 1.810, 	ValGMI: 1.118, 	Valdc: -11505.865, 	Valrep: 4115.172, 	Valdp: 0.000, 	ValObj: 2.23
+400	Obj: 0.878,	F: 1.068,	Cf: 1.343, 	GMI: 1.161, 	dc_loss: -30167.543, 	rep_loss: 11404.161, 	dp: 0.000, 	Val: 1.326, 	ValGMI: 1.198, 	Valdc: -27267.758, 	Valrep: 9564.030, 	Valdp: 0.000, 	ValObj: 1.32
+600	Obj: 0.560,	F: 0.847,	Cf: 1.382, 	GMI: 1.210, 	dc_loss: -35284.594, 	rep_loss: 12952.021, 	dp: 0.000, 	Val: 1.392, 	ValGMI: 1.231, 	Valdc: -31551.812, 	Valrep: 10555.343, 	Valdp: 0.000, 	ValObj: 1.62
+800	Obj: 0.466,	F: 0.780,	Cf: 1.501, 	GMI: 1.222, 	dc_loss: -37280.250, 	rep_loss: 13301.112, 	dp: 0.000, 	Val: 1.374, 	ValGMI: 1.213, 	Valdc: -32995.820, 	Valrep: 10693.837, 	Valdp: 0.000, 	ValObj: 1.73
+999	Obj: 0.288,	F: 0.641,	Cf: 1.545, 	GMI: 1.243, 	dc_loss: -37950.672, 	rep_loss: 13482.837, 	dp: 0.000, 	Val: 1.378, 	ValGMI: 1.265, 	Valdc: -34232.285, 	Valrep: 11131.208, 	Valdp: 0.000, 	ValObj: 1.75
+Saving result to results/ihdp//results_20210704_112615-111747/...
+
